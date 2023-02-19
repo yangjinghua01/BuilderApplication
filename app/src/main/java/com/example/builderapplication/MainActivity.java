@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
                 .setIcon(R.drawable.ic_launcher_background)
                 .show();
         ViewGroup viewGroup = findViewById(R.id.view_root);
-        NavigationBar navigationBar = (NavigationBar) new NavigationBar.Builder(this,R.layout.ui_navigation_bar,viewGroup).setTtile(R.id.back_tv,"back")
+        NavigationBar navigationBar = (NavigationBar) new NavigationBar.Builder(this, R.layout.ui_navigation_bar, viewGroup)
+                .setTtile(R.id.back_tv, "back")
                 .setBackOnclickListener(R.id.back_tv, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

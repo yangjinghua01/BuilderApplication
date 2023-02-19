@@ -9,11 +9,11 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AbsNavigationBar implements INavigation {
-    private Builder mBuildr;
+public class AbsNavigationBar<B extends AbsNavigationBar.Builder> implements INavigation {
+    private B mBuildr;
     private View mNavigationBar;
 
-    protected AbsNavigationBar(Builder builder) {
+    protected AbsNavigationBar(B builder) {
         this.mBuildr = builder;
         createNavigationBar();
     }
@@ -44,7 +44,7 @@ public class AbsNavigationBar implements INavigation {
         }
     }
 
-    private <T extends View> T findViewById(Integer key) {
+    public  <T extends View> T findViewById(Integer key) {
         return mNavigationBar.findViewById(key);
     }
 
@@ -61,7 +61,7 @@ public class AbsNavigationBar implements INavigation {
      *
      * @return
      */
-    public Builder getmBuildr() {
+    public B getmBuildr() {
         return mBuildr;
     }
 
